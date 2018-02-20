@@ -17,13 +17,15 @@
     // обрезать по границе ближайшего слова и добавить ... иначе возвращать строку без изменений.
     function minmax(array $arr1){
 
-        $val1=min($arr1);
-        $val2=max($arr1);
+        if (!empty($arr1)) {
+            $val1 = min($arr1);
+            $val2 = max($arr1);
 
 
-    $arr=array(
-        'min'=> $val1,
-        'max'=>$val2);
+            $arr = array('min' => $val1, 'max' => $val2);
+        }
+        else
+            $arr='Array is empty';
     return $arr;
     }
 
@@ -55,7 +57,7 @@
     }
 
     //min-max
-    echo "output " .var_export(minmax([3,2,1,0,15,6]),1)."<br>";
+    echo "output " .var_export(minmax([50,20,0,1,35]),1)."<br>";
 
     //announce
     $ann=announce('Количество символов, по которым строка будет перенесена',24);
